@@ -1,6 +1,5 @@
 package com.banking.rabo.fibonacci.controller;
 
-import com.banking.rabo.fibonacci.service.FibonacciService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static com.banking.rabo.fibonacci.service.FibonacciService.fibonacci;
+import static com.banking.rabo.fibonacci.service.FibonacciService.findSumOfFibonacci;
 import static com.banking.rabo.fibonacci.validator.FibonacciInputValidator.validateInput;
 
 /**
@@ -26,14 +27,14 @@ public class FibonacciController {
      * @return result
      */
     @GetMapping(value = "/fibonacci/calculate")
-    public long findFibonacci(@RequestParam int inputValue) {
+    public int findFibonacci(@RequestParam int inputValue) {
         log.info("The number entered to calculate sum of fibonacci is {}", inputValue);
         int result = 0;
         try {
             if (validateInput(inputValue)) {
-                List<Integer> fibonacciValues = FibonacciService.fibonacci(inputValue);
+                List<Integer> fibonacciValues = fibonacci(inputValue);
                 log.info("The fibonacci series is {}", fibonacciValues);
-                result = FibonacciService.findSumOfFibonacci(fibonacciValues);
+                result = findSumOfFibonacci(fibonacciValues);
                 log.info("The sum of fibonacci series is {}", result);
                 if (result > Integer.MAX_VALUE) {
                     throw new Exception();
