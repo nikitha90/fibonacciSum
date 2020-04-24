@@ -10,6 +10,6 @@ i.e 0+1+1+2+3 = 7
 The output is 7.
 
 # Negative scenarios
-Exception will be thrown when the input value is negative
-and if the calculated sum is more than the maximum integer number
+* Exception will be thrown when the input value is negative
+* If the calculated sum is more than the maximum integer number
 
