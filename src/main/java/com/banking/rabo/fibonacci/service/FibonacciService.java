@@ -49,7 +49,11 @@ public class FibonacciService {
      * @param inputValues
      * @return
      */
-    public static int findSumOfFibonacci(List<Integer> inputValues) {
-        return inputValues.stream().mapToInt(Integer::intValue).sum();
+    public static int findSumOfFibonacci(List<Integer> inputValues) throws Exception {
+           int sum = inputValues.stream().mapToInt(Integer::intValue).sum();
+            if (sum < 0) {
+                throw new Exception("Exceeded the integer value range");
+            }
+        return sum;
     }
 }

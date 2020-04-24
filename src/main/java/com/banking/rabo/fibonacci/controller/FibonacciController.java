@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static com.banking.rabo.fibonacci.service.FibonacciService.*;
+import static com.banking.rabo.fibonacci.service.FibonacciService.fibonacci;
+import static com.banking.rabo.fibonacci.service.FibonacciService.findSumOfFibonacci;
 import static com.banking.rabo.fibonacci.validator.FibonacciInputValidator.validateInput;
 
 /**
@@ -35,15 +36,10 @@ public class FibonacciController {
                 log.info("The fibonacci series is {}", fibonacciValues);
                 result = findSumOfFibonacci(fibonacciValues);
                 log.info("The sum of fibonacci series is {}", result);
-                if (result > Integer.MAX_VALUE) {
-                    throw new Exception();
-                }
-            } else {
-                log.error("An error occured while processing the request");
             }
-
         } catch (Exception ex) {
             log.error("Exception occured while processing the request");
+            log.error(ex.getMessage());
         }
         return result;
     }

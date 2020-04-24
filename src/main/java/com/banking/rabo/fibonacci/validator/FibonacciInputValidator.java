@@ -8,16 +8,10 @@ public class FibonacciInputValidator {
 
     private static final Logger log = LoggerFactory.getLogger(FibonacciInputValidator.class);
 
-    public static boolean validateInput(int inputValue) {
+    public static boolean validateInput(int inputValue) throws Exception {
         boolean isValid = true;
-        try {
-            if (inputValue < 0) {
-                isValid = false;
-                log.error("Input value is negative");
-                throw new Exception();
-            }
-        } catch (Exception ex) {
-            log.error("Given number {} is negative", inputValue);
+        if (inputValue < 0) {
+            throw new Exception("Input value is negative");
         }
         return isValid;
     }

@@ -22,7 +22,7 @@ public class FibonacciServiceTest {
     }
 
     @Test
-    public void findSumOfFibonacciSerries(){
+    public void findSumOfFibonacciSerries() throws Exception {
         List<Integer> fibonacciValues = new ArrayList<>();
         fibonacciValues.add(1);
         fibonacciValues.add(1);
