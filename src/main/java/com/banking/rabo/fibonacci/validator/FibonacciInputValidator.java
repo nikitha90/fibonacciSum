@@ -14,10 +14,10 @@ public class FibonacciInputValidator {
             if (inputValue < 0) {
                 isValid = false;
                 log.error("Input value is negative");
-                throw new NumberFormatException();
+                throw new Exception();
             }
-        } catch (NumberFormatException ex) {
-            log.error("Number format Exception - Given number {} is negative", inputValue);
+        } catch (Exception ex) {
+            log.error("Given number {} is negative", inputValue);
         }
         return isValid;
     }

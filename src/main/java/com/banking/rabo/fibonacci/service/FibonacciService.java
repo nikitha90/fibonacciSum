@@ -1,7 +1,5 @@
 package com.banking.rabo.fibonacci.service;
 
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -10,10 +8,7 @@ import java.util.stream.Stream;
 /**
  * This class is the implementation of the default method in interface
  */
-@Service
-public class FibonacciServiceImpl {
-
-
+public class FibonacciService {
     /**
      * This method is used to find the fibonacci series for the given list
      *
