@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static com.banking.rabo.fibonacci.service.FibonacciService.fibonacci;
-import static com.banking.rabo.fibonacci.service.FibonacciService.findSumOfFibonacci;
+import static com.banking.rabo.fibonacci.service.FibonacciService.*;
 import static com.banking.rabo.fibonacci.validator.FibonacciInputValidator.validateInput;
 
 /**

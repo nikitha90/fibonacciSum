@@ -5,12 +5,12 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.banking.rabo.fibonacci.service.FibonacciService.*;
-import static org.hamcrest.Matchers.hasItem;
+import static com.banking.rabo.fibonacci.service.FibonacciService.fibonacci;
+import static com.banking.rabo.fibonacci.service.FibonacciService.findSumOfFibonacci;
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
 
 public class FibonacciServiceTest {
 
