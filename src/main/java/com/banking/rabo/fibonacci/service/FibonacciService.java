@@ -34,7 +34,8 @@ public class FibonacciService {
                     .map(n -> n[1])
                     .collect(Collectors.toList());
             log.info("Introducing a delay of 1 second");
-            ScheduledFuture<List<Integer>> future = executorService.schedule(task, 1, SECONDS);
+            int random = (int)(1 * Math.random() + 0);
+            ScheduledFuture<List<Integer>> future = executorService.schedule(task, random * 1000, SECONDS);
             fibonacciSeries = future.get();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
